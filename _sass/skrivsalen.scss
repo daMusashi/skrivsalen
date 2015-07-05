@@ -1,0 +1,71 @@
+// separarerar för debug @import "bootstrap"; // mergar bootstrap med egen för mindra dataöverförinh
+
+// separarerar för debug @import "skrivsalen_vars";
+// separarerar för debug @import "skrivsalen_base";
+
+@import "skrivsalen_layout";
+
+.page-header {
+
+	margin-top: 5px;
+
+	h1 {
+		margin-top: 0px;
+		color: $specular-color;
+	}
+
+	small {
+		color: $sidebar-bg-color;
+	}
+}
+
+#sidebar {
+	
+	h2 {
+		color: $specular-color;
+	}
+
+	.form-group {
+		.help-block {
+			font-size: 80%;
+			color: $gray-light;
+		}
+		.value {
+			color: $specular-color;
+		}
+		.slider-value {
+			text-align: center;
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+}
+
+/* modals */
+
+#modal { // container
+	height: 0px;
+	overflow: hidden;
+
+	.modal-content {
+		background-color: $sidebar-bg-color;
+
+		&.warning {
+			.modal-header {
+				background-color: $brand-warning;
+			}
+		}
+
+		&.info {
+			.modal-header {
+				background-color: $brand-info;
+			}
+		}
+
+		&.error {
+			.modal-header {
+				background-color: $brand-danger;
+			}
+		}
+	}
+}

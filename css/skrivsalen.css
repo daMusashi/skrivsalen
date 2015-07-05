@@ -1,0 +1,44 @@
+/* Bootswatch overides */
+/* // Slut overrides */
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+/* Toggle Styles */
+#wrapper { padding-left: 0; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; }
+#wrapper.toggled { padding-left: 400px; }
+#wrapper.toggled #sidebar-wrapper { width: 400px; }
+#wrapper.toggled #main-content-wrapper { position: absolute; }
+
+#sidebar-wrapper { z-index: 1000; position: fixed; right: 400px; width: 0; height: 100%; margin-right: -400px; overflow-y: auto; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; background-color: #222222; }
+
+#main-content-wrapper { width: 100%; position: absolute; padding: 20px; margin-right: 400px; }
+
+/* Sidebar Styles */
+/*.sidebar-nav { position: absolute; top: 0px; margin: 0; padding: 0; list-style: none; width: $sidebar-width - (2 * $sidebar-padding);
+ li { text-indent: 20px; line-height: 40px;
+ a { display: block; text-decoration: none; } }
+ > .sidebar-brand { height: 65px; font-size: 18px; line-height: 60px; }
+}*/
+@media (min-width: 768px) { #wrapper { padding-right: 400px; }
+  #wrapper.toggled { padding-left: 0; }
+  #wrapper.toggled #sidebar-wrapper { width: 0; }
+  #wrapper.toggled #main-content-wrapper { position: relative; margin-right: 0; }
+  #sidebar-wrapper { padding: 20px; width: 400px; }
+  #main-content-wrapper { padding: 20px; position: relative; } }
+.page-header { margin-top: 5px; }
+.page-header h1 { margin-top: 0px; color: #F39C12; }
+.page-header small { color: #222222; }
+
+#sidebar h2 { color: #F39C12; }
+#sidebar .form-group .help-block { font-size: 80%; color: #999; }
+#sidebar .form-group .value { color: #F39C12; }
+#sidebar .form-group .slider-value { text-align: center; margin: 0px; padding: 0px; }
+
+/* modals */
+#modal { height: 0px; overflow: hidden; }
+#modal .modal-content { background-color: #222222; }
+#modal .modal-content.warning .modal-header { background-color: #F39C12; }
+#modal .modal-content.info .modal-header { background-color: #3498DB; }
+#modal .modal-content.error .modal-header { background-color: #E74C3C; }

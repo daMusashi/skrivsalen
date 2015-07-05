@@ -1,0 +1,19 @@
+//@import "bootstrap/variables";
+@import "bootswatch/variables";
+
+
+/* Bootswatch overides */
+$icon-font-path:          "../bootstrap/fonts/";
+$body-bg:               $gray-light;
+/* // Slut overrides */
+
+
+// egna
+$specular-color: $brand-warning;
+
+$main-padding:  20px;
+
+$sidebar-width: 400px;
+$sidebar-padding: 20px;
+$sidebar-content-width : $sidebar-width - (2 * $sidebar-padding);
+$sidebar-bg-color: $gray-darker;

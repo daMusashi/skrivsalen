@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Martin Nilsson, Basement Creative Studio">
+
+    <title>SKRIVSALEN</title>
+
+    <!-- SEPARERAT FÖR DEBUG Egen CSS mergad med Bootstrap & Bootswatch -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/skrivsalen.css" rel="stylesheet">
+
+    <script src="js/jquery/jquery-2.1.4.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script src="js/Skrivsalen.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            Skrivsalen.Loader.loadApp();
+        })
+    </script>
+
+</head>
+
+<body>
+    <!-- container för modalds -->
+    <div id="modal"></div>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <div id="sidebar">
+                <form>
+                    <h2>Lägg till elevgrupper</h2>
+                    <div class="form-group">
+                        <label for="select-elever">Ladda beskrivningsfiler</label>
+                        <input type="file" class="form-control" id="select-elever-file" aria-describedby="select-elever-help">
+                        <button type="button" class="btn btn-primary" id="select-elever-submit">Ladda vald elev-fil</button>
+                        <span id="select-elever-help" class="help-block">Välj en text-fil som exporterats från Skola24 med en undervisningsgrupp som ska delta. Flera kan anges, men bara en åt gången.</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Tillagda elevgrupper</label>
+                        <div id="skrivsalen-edit-grupper"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="select-elever-long">Markera elever med förlängd tid</label>
+                        <button type="button" class="btn btn-primary" id="select-elever-long" aria-describedby="select-elever-long-help">Markera elever...</button>
+                        <span id="select-elever-long-help" class="help-block">Välj elever med förlängd tid. Dessa kommer inte ingå i placaringsprocessen</span>
+                    </div>
+                    <h2>Skrivsalen</h2>
+                    <div class="form-group">
+                        <label for="skrivsalen-select-rows">Antalet platser per <em>rad</em></label>
+                        <p class="value slider-value" id="select-rows-value">20</p>
+                        <input type="range" min="2" max="20" defualtValue="10" class="form-control" id="skrivsalen-select-rows" data-label="select-rows-value" aria-describedby="select-rows-help">
+                        <span id="select-rows-help" class="help-block">Ange antalet platser per <strong>rad</strong> i skrivsalen</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="skrivsalen-select-cols">Antalet platser per <em>kolumn</em></label>
+                        <p class="value slider-value" id="select-cols-value">20</p>
+                        <input type="range" min="2" max="20" defualtValue="10" class="form-control" id="skrivsalen-select-cols" data-label="select-cols-value" aria-describedby="select-cols-help">
+                        <span id="select-cols-help" class="help-block">Ange antalet platser per <strong>kolumn</strong> i skrivsalen</span>
+                    </div>
+                </form>
+            </div><!-- /#sidebar -->
+        </div><!-- /#sidebar-wrapper -->
+
+        <!-- Main Content -->
+        <div id="main-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <header class="page-header">
+                            <h1>Skrivsalen <small>&raquo applikation för skrivsalsplacering</small></h1>
+                        </header>
+
+                        <div id="content">
+                        <div id="skrivsalen-karta-container"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#main-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
