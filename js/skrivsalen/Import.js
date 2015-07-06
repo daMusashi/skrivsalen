@@ -35,7 +35,7 @@ ns.Import.prototype._parseFile = function(rawText, dataObj){
 			
 		}
 		//console.log(">>"+fnamn+" "+enamn+","+klass+"("+grupp+")");
-		gruppObj.namn = grupp;
+		gruppObj.setNamn(grupp);
 		gruppObj.addStudent(fnamn, enamn, klass);
 	}
 	dataObj.addGrupp(gruppObj);

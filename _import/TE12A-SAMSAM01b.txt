@@ -1,0 +1,27 @@
+Grupplista
+Nr	Grupp	Skola	Klass	Namn	E-post	Telefon
+1	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Al-Dabbagh, Mohammed		
+2	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Altensten, Jakob		
+3	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Andersson, Johan		
+4	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Billberg, Johanna		
+5	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Cramnert, Petter		
+6	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Dahlberg, Linus		
+7	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Dahlgren Eek, Rasmus		
+8	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Damberg, Johanna		
+9	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Ekberg, Jonas		
+10	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Forsman, Charlotta		
+11	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Haksabanovic, Benjamina		
+12	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Hamanee, Sahaphol		
+13	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Hannebo, Fredrik		
+14	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Lindén, Jonathan		
+15	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Lyrenberg, Carl		
+16	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Malazariyan, Behzad		
+17	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Myhrman Nilsson, Clara		
+18	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Nyman, Ida		
+19	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Olsson, Johanna		
+20	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Runemark, Tim		
+21	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Sjöstedt, Maja		
+22	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Skålberg, Niklas		
+23	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Snarberg, Oskar		
+24	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Spångberg, Simon		
+25	TE12A/SAMSAM01b	Älvkullegymnasiet	TE12A	Söderberg, Louise		

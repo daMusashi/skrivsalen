@@ -1,0 +1,31 @@
+Grupplista
+Nr	Grupp	Skola	Klass	Namn	E-post	Telefon
+1	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Andersson, Victor		
+2	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Berdén, Andreas		
+3	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Bergman, Amanda		
+4	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Bergqvist, David		
+5	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Blom, Albin	albin-hockey@hotmail.com	
+6	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Edbom, Robin	robin.edbom@gmail.com	
+7	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Eld Nyman, Oscar		
+8	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Eriksson, Lovisa	loviisaericsson@live.se	
+9	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Gjedsted, Julia		
+10	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Gustafsson, Emil		
+11	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Hagström, Elise		
+12	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Hartmann Gidlöf, Matilda		
+13	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Jeffreys, Andrew		
+14	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Johannesson, David		
+15	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Johansson, Felix		
+16	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Jonsson, Emelie		
+17	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Lundegård, Per		
+18	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Nidsjö, Astrid		
+19	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Nilsson, Felix		
+20	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Olofsson, Petter		
+21	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Pavlov, Zacharias		
+22	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Persson, André		
+23	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Sörbu Hultman, Tobias		
+24	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Tärnbrant, David	david.tarnbrant@hotmail.com	
+25	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Ulfvenstierna, Adam		
+26	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Warnestad, Hannes		
+27	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Vestin, Alexander	botstarai@gmail.com	
+28	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Ziemann, Noah		
+29	TE12E/SAMSAM01b	Älvkullegymnasiet	TE12E	Österberg, Erik		

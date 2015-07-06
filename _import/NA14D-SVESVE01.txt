@@ -1,0 +1,33 @@
+Grupplista
+Nr	Grupp	Skola	Klass	Namn	E-post	Telefon
+1	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Andersson, Magdalena		
+2	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Andreasson, Viktor		
+3	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Björkengren, Julia		
+4	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Blom, Jolin		
+5	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Bäck, Sanna		
+6	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Dladla, Joy		
+7	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Einarsson, Sofia		
+8	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Esperi, Lukas		
+9	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Fleron, Fredrik		
+10	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Gög, Dilan		
+11	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Haaga, Johanna		
+12	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Hulteberg, Sofie		
+13	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Kariis, Annette		
+14	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Klaesson, Camilla		
+15	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Leimar, Maja		
+16	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Lindberg, Alfred		
+17	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Lundberg, Jonas		
+18	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Magnusson Quanz, Julia		
+19	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Modén, Axel		
+20	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Mohammedi, Tina		
+21	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Mujanovic, Ajnur		
+22	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Norlander, Clara		
+23	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Parezanin, Ivana		
+24	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Rhodiner, Jack		
+25	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Ryen, Oscar		
+26	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Solvang, Antonio		
+27	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Syndy, Shinwar		
+28	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Telson, Nadja		
+29	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Truelson, Christina		
+30	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Wettersten, Ludvig		
+31	NA14D/SVESVE01	Älvkullegymnasiet	NA14D	Wintzell, Maja		

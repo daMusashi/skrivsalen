@@ -1,3 +1,9 @@
+/**
+ *  Adapter för textfilsexport från skola 24
+ *  - Standardrapport Grupper lista med epost
+ *  - Export (text)
+ */
+
 var ns = Skrivsalen.createNamespace("Importer");
 
 ns.ImportAdapter = function(){};

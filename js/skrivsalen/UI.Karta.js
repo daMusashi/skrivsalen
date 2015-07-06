@@ -2,7 +2,7 @@ var ns = Skrivsalen.createNamespace("UI");
 
 ns.Karta = function(platserArr){
 
-	console.log("SKRIVSALEN: Skapar karta..");
+	Skrivsalen.log("Skapar karta..", "UI.Karta");
 
 	var container = document.getElementById(Skrivsalen.Config.domId_karta_container);
 	
@@ -14,25 +14,22 @@ ns.Karta = function(platserArr){
 }
 
 ns.Karta.prototype.uppdatera = function(platsArr){
-	console.log("SKRIVSALEN: Uppdaterar karta..");
+	Skrivsalen.log("Uppdaterar karta..", "UI.Karta");
 	
 	var platser = platsArr;
 
 	var cols = platser.length;
 	var rows = platser[0].length;
-	console.log("SKRIVSALEN: cols:"+cols+", rows:"+rows);
+	//console.log("SKRIVSALEN: cols:"+cols+", rows:"+rows);
 
-	// "tömmer" kartan. Nedan snabbare än innerHTML = "", se http://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
-	while(this.mainDOM.firstChild) {
-   		this.mainDOM.removeChild(this.mainDOM.firstChild);
-	}
+	Skrivsalen.UI.Factory.empty(this.mainDOM);
 
 	//var table = document.createElement("table");
 	var cellWidth = Math.floor((1/cols)*100); // i %
-	console.log(cols);
-	console.log(1/cols);
-	console.log((1/cols)*100);
-	console.log(cellWidth);
+	//console.log(cols);
+	//console.log(1/cols);
+	//console.log((1/cols)*100);
+	//console.log(cellWidth);
 
 	for(var row = 0; row < rows; row++){
 		//var tr = document.createElement("tr");

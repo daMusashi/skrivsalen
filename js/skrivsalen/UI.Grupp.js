@@ -2,27 +2,35 @@ var ns = Skrivsalen.createNamespace("UI");
 
 ns.Grupp = function(dataGruppObj){
 	this.grupp = dataGruppObj;
-	this.color = "pink";
 }
 
 ns.Grupp.prototype.getListitemDOM = function(){
+	var conf = Skrivsalen.Config;
+
 	var base = document.createElement("li");
 	$(base).attr("class", "list-group-item");
-
-	var color = document.createElement("input");
-	$(color).attr("type", "color");
-	$(color).attr("name", "color-"+this.grupp.namn);
-	$(color).attr("value", this.color);
 
 	var studentsButton = document.createElement("a");
 	//$(studentsButton).attr("class", "badge");
 	$(studentsButton).attr("href", "#");
-	$(studentsButton).text("s");
+	studentsButton = Skrivsalen.UI.Factory.addTooltip(studentsButton, "Redgiera studentlista");
+	var studentsButtonIcon = document.createElement("img");
+	$(studentsButtonIcon).attr("src", conf.gfx_file_gruppedit);
+	studentsButton.appendChild(studentsButtonIcon);
+
 
 	var removeButton = document.createElement("a");
 	//$(removeButton).attr("class", "badge");
 	$(removeButton).attr("href", "#");
-	$(removeButton).text("r");
+	$(removeButton).attr("data-grupp", this.grupp.namn);
+	$(removeButton).on("click", function(ev){
+		var gruppId = $(this).attr("data-grupp");
+		Skrivsalen.data.removeGrupp(gruppId);
+	});
+	removeButton = Skrivsalen.UI.Factory.addTooltip(removeButton, "Ta bort undervisningsgrupp");
+	var removeButtonIcon = document.createElement("img");
+	$(removeButtonIcon).attr("src", conf.gfx_file_gruppdelete);
+	removeButton.appendChild(removeButtonIcon);
 
 	var namn = document.createElement("span");
 	$(namn).attr("class", "namn");
@@ -32,7 +40,7 @@ ns.Grupp.prototype.getListitemDOM = function(){
 	$(badge).attr("class", "badge");
 	$(badge).text(this.grupp.studenter.length);
 	
-	base.appendChild(color);
+	base.appendChild(Skrivsalen.UI.Factory.getSelectGruppColorDOM(this.grupp));
 	base.appendChild(studentsButton);
 	base.appendChild(removeButton);
 	base.appendChild(namn);
@@ -41,6 +49,10 @@ ns.Grupp.prototype.getListitemDOM = function(){
 	return base;
 }
 
+/**
+ * [getInfoDOM description]
+ * @return {[type]} [description]
+ */
 ns.Grupp.prototype.getInfoDOM = function(){
 	var base = document.createElement("div");
 	var titel = document.createElement("h2");

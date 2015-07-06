@@ -1,0 +1,25 @@
+Grupplista
+Nr	Grupp	Skola	Klass	Namn	E-post	Telefon
+1	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Ahlqvist, Erica		
+2	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Alsing, Anton		
+3	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Arkbro, Daniel		
+4	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Burman, Jonas		
+5	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Delen, Erkan		
+6	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Eriksson, Oskar		
+7	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Eriksson, Rasmus		
+8	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Eriksson Mellgren, William		
+9	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Filipovic, Adna		
+10	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Hallén, Mattis		
+11	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Hansen, Max		
+12	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Hasslid, Erik		
+13	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Hirvonen, Oscar		
+14	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Höglund, Anna		
+15	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Jansson, Alva		
+16	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Karlsson, Emma		
+17	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Lindblad Jansson, Oscar		
+18	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Maspers Linde, Philip		
+19	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Nikander, Johan		
+20	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Oberg, Emily		
+21	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Palenius, Isak		
+22	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Pettersson, Valdemar		
+23	TIME13/FYSFYS02	Älvkullegymnasiet	TIME13	Vendel, Tam		

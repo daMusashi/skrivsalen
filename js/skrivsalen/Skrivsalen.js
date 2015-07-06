@@ -1,9 +1,15 @@
 function Skrivsalen(){};
 
+Skrivsalen.show_load_msg = true; // Visa lading-log (innan Config.show_log är känd)
+
 Skrivsalen.Loader = {};
 
-Skrivsalen.Loader.loadApp = function(){
+Skrivsalen.Loader.loadApp = function(appPath){
 	
+	console.log("SKRIVSALEN [loadApp]: Appen laddas..."); // Skrivsalen.log änni inte definerad.
+
+	Skrivsalen.appPath = appPath;
+
 	var scripts = [];
 	scripts.push("Config");
 	
@@ -17,10 +23,12 @@ Skrivsalen.Loader.loadApp = function(){
 	scripts.push("Logik.Placeringar");
 	scripts.push("Logik.PlatsMath");
 	scripts.push("Logik.Plats");
+	scripts.push("Logik.StudentManager");
 
+	scripts.push("UI.Factory");
 	scripts.push("UI.Modal");
 	scripts.push("UI.Slider");
-	scripts.push("UI.GruppEditList");
+	scripts.push("UI.GruppList");
 	scripts.push("UI.Grupp");
 	scripts.push("UI.Plats");
 	scripts.push("UI.Karta");
@@ -31,23 +39,50 @@ Skrivsalen.Loader.loadApp = function(){
 	for(var i = 0; i < scripts.length; i++){
 		Skrivsalen.Loader.loadScript(scripts[i], Skrivsalen.Loader);
 	}
-
 	
 }
 
 Skrivsalen.Loader.init = function(){
 	
-	console.log(Skrivsalen.prototype);
-	console.log("SKRIVSALEN: Appen initieras...");
+	/** Definierar dessa console.log-funktioner i init, då de behöver Skrivsalen.Config */
+
+	Skrivsalen.log = function(msg, source){
+		if(Skrivsalen.Config.show_log){
+			var source = " ["+source+"]" || "";
+			console.log("SKRIVSALEN"+source+": "+msg);
+		}
+	}
+
+	Skrivsalen.debug = function(msg, source){
+		if(Skrivsalen.Config.show_debug){
+			var source = " ["+source+"]" || "";
+			console.log("*DEBUG* SKRIVSALEN"+source+": "+msg);
+		}
+	}
+
+	Skrivsalen.warning = function(msg, source){
+		if(Skrivsalen.Config.show_log){
+			var source = " ["+source+"]" || "";
+			console.log("!!VARNING!! SKRIVSALEN"+source+": "+msg);
+		}
+	}
+
+
+	Skrivsalen.log("Appen initieras...", "init");
 
 	var conf = Skrivsalen.Config;
 
 	Skrivsalen.data = new Skrivsalen.Data.Manager();
-	Skrivsalen.placeringar = new Skrivsalen.Logik.Placeringar(conf.default_rows, conf.default_cols, Skrivsalen.data);
+	Skrivsalen.placeringar = new Skrivsalen.Logik.Placeringar(conf.default_rows, conf.default_cols);
 
-	/* ladda-knapp */
-	$("#select-elever-submit").on("click", function(){
-		var file = $("#select-elever-file").get(0).files[0];
+	var gruppUI = new Skrivsalen.UI.GruppList(document.getElementById(Skrivsalen.Config.domId_gruppListContainer), this);
+
+	/* Bootstrap tooltips */
+   	$('[data-toggle="tooltip"]').tooltip(); 
+
+	/* ladda-knapp */ 
+	$("#"+conf.domId_importFileButton).on("change", function(){
+		var file = $(this).get(0).files[0];
 		//console.log(file);
 		if(file == ""){
 			var m = new Modal();
@@ -64,20 +99,23 @@ Skrivsalen.Loader.init = function(){
 		m.showWarning("Du har en för gammal webbläsare", "Den här applikationen behöver en modern webbläsare för att fungera. Uppdatera den här, eller prova en annan, om du har fler webbläsare installerade.");
 	}
 
-	console.log("SKRIVSALEN: Appen initierad. Kör på!!!");
+	Skrivsalen.log("Appen initierad. Kör på!!!", "init");
 }
+
 
 /* LOADER */
 Skrivsalen.Loader.loadScript = function(file, loadObj){
 
-    file = "js/"+file+".js";
+    file = Skrivsalen.appPath+file+".js";
 
     var script = document.createElement("script")
     //script.type = "text/javascript"; // behövs inte för HTML5
 
     script.onload = function(){
         loadObj.scriptsLoaded++;
-        console.log("SKRIVSALEN: laddning av klassfil '"+file+"' färdig ["+loadObj.scriptsLoaded+" av "+loadObj.scriptsNum+"]");
+        if(Skrivsalen.show_load_msg){
+        	console.log("SkRIVSALEN: Laddning av klassfil '"+file+"' färdig ["+loadObj.scriptsLoaded+" av "+loadObj.scriptsNum+"]");
+    	}
 
         if(loadObj.scriptsNum == loadObj.scriptsLoaded){
         	loadObj.init();
@@ -85,7 +123,7 @@ Skrivsalen.Loader.loadScript = function(file, loadObj){
         
     };
     script.onabort = function(){
-        console.log("SKRIVSALEN: laddning av klassfil '"+file+"' MISSLYCKADES");
+        Sconsole.log("!!VARNING!! SKRIVSALEN: laddning av klassfil '"+file+"' MISSLYCKADES");
     };
 
     script.src = file;

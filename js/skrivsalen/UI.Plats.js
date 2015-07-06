@@ -14,6 +14,8 @@ ns.Plats.prototype.getDOM = function(widthProcent){
 	$(base).css("display", "inline-block");
 
 	var plats = document.createElement("div");
+	base.appendChild(plats);
+
 	$(plats).attr("class", "plats");
 	$(plats).css("margin", "3%");
 	if(this.plats.student){
@@ -23,12 +25,19 @@ ns.Plats.prototype.getDOM = function(widthProcent){
 		$(plats).attr("title", this.plats.student.grupp.namn);
 		var namnklass = this.plats.student.namn + " ("+this.plats.student.klass+")";
 		$(plats).attr("data-content", namnklass);
+		$(plats).attr("data-toggle", "popover");
+		$(plats).attr("data-placement", "top");
+		$(plats).popover({
+			trigger: "hover",
+			template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 style="background-color:'+color+'" class="popover-title"></h3><div class="popover-content"></div></div>'
+		});
+		$(plats).css("cursor", "pointer");
 
 	} else {
 		$(plats).css("background-color", "#666");
 		$(plats).attr("data-content", "Platsen är TOM");
 	}
-	base.appendChild(plats);
+	
 
 	var num = document.createElement("div");
 	$(num).attr("class", "num");

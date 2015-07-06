@@ -10,6 +10,13 @@ ns.Student = function(fornamn, efternamn, klass, gruppObj, include){
 
 	this.namn = this.forNamn + " " + this.efterNamn;
 
+	if(this.grupp){
+		var grupp = this.grupp.namn;
+	} else {
+		var grupp = "";
+	}
+	this.id = this.forNamn+"-"+this.efterNamn+"-"+this.klass+"-"+grupp;
+
 	this.prov = "";
 }
 

@@ -1,0 +1,20 @@
+Grupplista
+Nr	Grupp	Skola	Klass	Namn	E-post	Telefon
+1	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Block, Agnes		
+2	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Bruce, Catrine		
+3	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Bångerius, Sara		
+4	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Eng, Layla		
+5	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Eriksson, Johanna		
+6	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Fridlund, Elin		
+7	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Ioannidis, Julia		
+8	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Karlsson, Victor		
+9	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Länström, Marie		
+10	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Lövgren, Johanna		
+11	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Maxstad, Martina		
+12	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Melin, Louise		
+13	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Palenius, Amalia		
+14	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Petersson West, Johanna		
+15	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Rogne, Andreas		
+16	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Thorén, Emelie		
+17	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Warnqvist, Johanna		
+18	NAES12/IDRIDR01	Älvkullegymnasiet	NAES12	Östlund, Linn		

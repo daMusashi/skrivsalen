@@ -1,17 +1,15 @@
 var ns = Skrivsalen.createNamespace("Logik"); 
 
-ns.Placeringar = function(rows, cols, dataObj){
+ns.Placeringar = function(rows, cols){
 
 	var conf = Skrivsalen.Config;
 
 	var me = this;
 
-	this.data = dataObj;
-
-	this.data.onchangeListener = function(){
-		console.log(me);
+	Skrivsalen.data.addOnChangeListener(function(){
+		Skrivsalen.debug("Data.Manager onChange-listener i Logik.Placeringar triggad", "Logik.Placeringar");
 		me.uppdatera();
-	}
+	});
 
 	this.rows = rows; // Y
 	this.cols = cols; // X
@@ -33,8 +31,8 @@ ns.Placeringar = function(rows, cols, dataObj){
 }
 
 ns.Placeringar.prototype.uppdatera = function(){
-	console.log("SKRIVSALEN: Uppdaterar placeringar...");
-	console.log(this);
+	Skrivsalen.log("Uppdaterar placeringar...", "Logik.Placeringar");
+
 	// ALGORITM
 	// * Ta fram vilka platser som ska användas av de tillgngängliga
 	// * - Få fram bästa spridningen, där avstånd i sidled (mellan kolumner) prioriteras
@@ -49,15 +47,17 @@ ns.Placeringar.prototype.uppdatera = function(){
 	
 	this._resetPlatser();
 
-	var antalStudenter = this.data.getAntalStudenter();
+	var antalStudenter = Skrivsalen.data.getAntalStudenter();
 
 	if(antalStudenter > 0){
 		
-		// Platser som beBästa spridningen på 
+		/* ta reda på platser att använda */
 		var math = new Skrivsalen.Logik.PlatsMath(this.rows, this.cols, antalStudenter);
 
 		try {
+			Skrivsalen.debug("Studenter:"+antalStudenter);
 			var steps = math.getBestStep();
+			math.debug(steps, "main");
 			//console.log("Placeringar: resultat-steps");
 			//console.log(steps);
 		} catch (err){
@@ -66,25 +66,63 @@ ns.Placeringar.prototype.uppdatera = function(){
 			return false;
 		}
 
-		// fyll på med elever
-		console.log("Placeringar: Placerar ut elever...");
-		//console.log(this);
+		/* 
+			steps baseras på kvadratisk form, om avlångt kan det gå att pressa ut fler rader/kolumner  
+			testar att "pressa ut" ut fler cols resp rows
+		*/
+		Skrivsalen.debug("Tar reda på vilka platser som ska användas...", "Logik.Placeringar");
+
+		var testMoreColStep = steps.clone();
+		testMoreColStep.debug("testMoreColStep");
+		Skrivsalen.debug(math.isStepSolutionValid(testMoreColStep));
+		var i = -1;
+		while(math.isStepSolutionValid(testMoreColStep)){
+			testMoreColStep.colStep++;
+			math.debug(testMoreColStep, "testMoreColStep++");
+			//testMoreColStep.debug("testMoreColStep++");
+			i++;
+		}
+		if(i > 0){
+			steps = testMoreColStep;
+			steps.debug("main MORE cols");
+		}
+
+		var testMoreRowStep = steps.clone();
+		testMoreRowStep.debug("testMoreRowStep");
+		var i = -1;
+		while(math.isStepSolutionValid(testMoreRowStep)){
+			testMoreRowStep.rowStep++;
+			//testMoreRowStep.debug("testMoreRowStep++");
+			i++;
+		}
+		if(i > 0){
+			steps = testMoreRowStep;
+			steps.debug("main MORE rowa");
+		}
+		math.debug(steps, "END");
+
+		/* Placerar ut elever på framtagna platser */
+		Skrivsalen.debug("Placerar ut elever...", "Logik.Placeringar");
+
+		var studenter = new Skrivsalen.Logik.StudentManager(Skrivsalen.data.grupper);
+
 		index = 0;
+		var student;
 		for(var col = 0; col < this.cols; col += steps.colStep){
 			for(var row = 0; row < this.rows; row += steps.rowStep){
-				if(index < antalStudenter){
-					//console.log(this.platser);
-					console.log("Placeringar: fyller elev på col:"+col+", row:"+row);
-					//console.log(this.platser[col][row]);
-					this.platser[col][row].student = this.data.studenter[index];
-					index++;
+				if(student = studenter.getNext()){
+					
+					this.platser[col][row].student = student;
+					
+				} else {
+					break;
 				}
 			}
 		}
 		
 		
 	} else {
-		console.log("SKRIVSALEN: ...inga studenter än :(");
+		Skrivsalen.log("inga studenter än :(", "Logik.Placeringar");
 	}
 
 	this.karta.uppdatera(this.platser);
@@ -92,13 +130,13 @@ ns.Placeringar.prototype.uppdatera = function(){
 
 ns.Placeringar.prototype.setRows = function(val){
 	this.rows = val;
-	console.log("Placeringar >> Rader satt till: "+ this.rows);
+	Skrivsalen.debug("Placeringar >> Rader satt till: "+ this.rows, "Logik.Placeringar: setRows");
 	this.uppdatera();
 }
 
 ns.Placeringar.prototype.setCols = function(val){
 	this.cols = val;
-	console.log("Placeringar >> Kolumner satt till: "+ this.cols);
+	Skrivsalen.debug("Placeringar >> Kolumner satt till: "+ this.cols, "Logik.Placeringar: setRows");
 	this.uppdatera();
 }
 

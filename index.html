@@ -16,14 +16,16 @@
     <link href="css/skrivsalen.css" rel="stylesheet">
 
     <script src="js/jquery/jquery-2.1.4.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
 
+    <script src='js/spectrum/spectrumModded.js'></script>
+    <link rel='stylesheet' href='js/spectrum/spectrum.css' />
 
-    <script src="js/Skrivsalen.js"></script>
+    <script src="js/skrivsalen/Skrivsalen.js"></script>
 
     <script>
         $(document).ready(function(){
-            Skrivsalen.Loader.loadApp();
+            Skrivsalen.Loader.loadApp("js/skrivsalen/");
         })
     </script>
 
@@ -41,8 +43,7 @@
                     <h2>Lägg till elevgrupper</h2>
                     <div class="form-group">
                         <label for="select-elever">Ladda beskrivningsfiler</label>
-                        <input type="file" class="form-control" id="select-elever-file" aria-describedby="select-elever-help">
-                        <button type="button" class="btn btn-primary" id="select-elever-submit">Ladda vald elev-fil</button>
+                        <input type="file" class="form-control" id="skrivsalen-select-file" aria-describedby="select-elever-help">
                         <span id="select-elever-help" class="help-block">Välj en text-fil som exporterats från Skola24 med en undervisningsgrupp som ska delta. Flera kan anges, men bara en åt gången.</span>
                     </div>
                     <div class="form-group">
@@ -56,13 +57,13 @@
                     </div>
                     <h2>Skrivsalen</h2>
                     <div class="form-group">
-                        <label for="skrivsalen-select-rows">Antalet platser per <em>rad</em></label>
+                        <label for="skrivsalen-select-rows">Antalet <em>rader</em></label>
                         <p class="value slider-value" id="select-rows-value">20</p>
                         <input type="range" min="2" max="20" defualtValue="10" class="form-control" id="skrivsalen-select-rows" data-label="select-rows-value" aria-describedby="select-rows-help">
                         <span id="select-rows-help" class="help-block">Ange antalet platser per <strong>rad</strong> i skrivsalen</span>
                     </div>
                     <div class="form-group">
-                        <label for="skrivsalen-select-cols">Antalet platser per <em>kolumn</em></label>
+                        <label for="skrivsalen-select-cols">Antalet <em>kolumner</em></label>
                         <p class="value slider-value" id="select-cols-value">20</p>
                         <input type="range" min="2" max="20" defualtValue="10" class="form-control" id="skrivsalen-select-cols" data-label="select-cols-value" aria-describedby="select-cols-help">
                         <span id="select-cols-help" class="help-block">Ange antalet platser per <strong>kolumn</strong> i skrivsalen</span>
