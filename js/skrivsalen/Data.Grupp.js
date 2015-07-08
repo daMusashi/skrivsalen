@@ -5,7 +5,8 @@ ns.Grupp = function(){
 
 	this.namn = "ospec";
 	this.color = "#444444";
-	this.studenter = [];
+	this.studenterAlla = [];
+	this.studenter = []; // genereras, bara stunder med includeed = true
 	this.id = this.namn;
 
 	/**
@@ -18,6 +19,23 @@ ns.Grupp = function(){
 	this.UI = new Skrivsalen.UI.Grupp(this);
 
 	this.onchangeListeners = [];
+}
+
+ns.Grupp.prototype.uppdatera = function(){
+	this._genIncludedList();
+	
+	Skrivsalen.debug("Uppdaterat grupp "+this.namn+": elever "+this.getAntal()+" (alla "+this.getAntalAlla()+")", "Data.Grupp");
+	this._doOnChangeListeners();
+}
+
+ns.Grupp.prototype._genIncludedList = function(){
+	this.studenter = [];
+	for(var i = 0; i < this.studenterAlla.length; i++){
+		if(this.studenterAlla[i].include){
+			this.studenter.push(this.studenterAlla[i]); 
+		}
+	}
+
 }
 
 ns.Grupp.prototype.setNamn = function(namn){
@@ -37,23 +55,44 @@ ns.Grupp.prototype._doOnChangeListeners = function(){
 }
 
 ns.Grupp.prototype.addStudent = function(fnamn, enamn, klass){
-	this.studenter.push(new Skrivsalen.Data.Student(fnamn, enamn, klass, this));
+	this.studenterAlla.push(new Skrivsalen.Data.Student(fnamn, enamn, klass, this));
+	this.uppdatera();
 	/** Har ingen onChange-trigger här, då denna funktion bara ska användas "internt" vid import och inga enskilda uppdateringar av t.ex UI då behövs */
 }
 
-ns.Grupp.prototype.excludeStudent = function(studentId){
-	for(var i = 0; i < this.studenter.length; i++){
-		if(this.studenter[i].id == studentId){
-			this.studenter[i].include = false; 
+ns.Grupp.prototype.setStudentInclude = function(studentId, include){
+	for(var i = 0; i < this.studenterAlla.length; i++){
+		if(this.studenterAlla[i].id == studentId){
+			this.studenterAlla[i].include = include; 
 			/** triggar onChange */
-			this._doOnChangeListeners();
+			
 			break;
 		}
 	}
+	this.uppdatera();
+	this._doOnChangeListeners();
+}
+
+ns.Grupp.prototype.getAntalAlla = function(){
+	return this.studenterAlla.length;
 }
 
 ns.Grupp.prototype.getAntal = function(){
 	return this.studenter.length;
+}
+
+ns.Grupp.prototype.getNext = function(){
+	//Skrivsalen.debug("marker: "+this.marker+" antal(alla):"+this.getAntalAlla(), "Data.Grupp");
+	
+	if(this.marker >= this.getAntal()){
+		return false;
+	}
+	var student = this.studenter[this.marker];
+	//Skrivsalen.debug("student", "Data.Grupp");
+	//console.log(student);
+	this.marker++;
+
+	return student;
 }
 
 ns.Grupp.prototype.getListitemDOM = function(color){

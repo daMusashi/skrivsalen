@@ -55,9 +55,9 @@ ns.Placeringar.prototype.uppdatera = function(){
 		var math = new Skrivsalen.Logik.PlatsMath(this.rows, this.cols, antalStudenter);
 
 		try {
-			Skrivsalen.debug("Studenter:"+antalStudenter);
+			//Skrivsalen.debug("Studenter:"+antalStudenter);
 			var steps = math.getBestStep();
-			math.debug(steps, "main");
+			//math.debug(steps, "main");
 			//console.log("Placeringar: resultat-steps");
 			//console.log(steps);
 		} catch (err){
@@ -70,25 +70,25 @@ ns.Placeringar.prototype.uppdatera = function(){
 			steps baseras på kvadratisk form, om avlångt kan det gå att pressa ut fler rader/kolumner  
 			testar att "pressa ut" ut fler cols resp rows
 		*/
-		Skrivsalen.debug("Tar reda på vilka platser som ska användas...", "Logik.Placeringar");
+		//Skrivsalen.debug("Tar reda på vilka platser som ska användas...", "Logik.Placeringar");
 
 		var testMoreColStep = steps.clone();
-		testMoreColStep.debug("testMoreColStep");
+		//testMoreColStep.debug("testMoreColStep");
 		Skrivsalen.debug(math.isStepSolutionValid(testMoreColStep));
 		var i = -1;
 		while(math.isStepSolutionValid(testMoreColStep)){
 			testMoreColStep.colStep++;
-			math.debug(testMoreColStep, "testMoreColStep++");
+			//math.debug(testMoreColStep, "testMoreColStep++");
 			//testMoreColStep.debug("testMoreColStep++");
 			i++;
 		}
 		if(i > 0){
 			steps = testMoreColStep;
-			steps.debug("main MORE cols");
+			//steps.debug("main MORE cols");
 		}
 
 		var testMoreRowStep = steps.clone();
-		testMoreRowStep.debug("testMoreRowStep");
+		//testMoreRowStep.debug("testMoreRowStep");
 		var i = -1;
 		while(math.isStepSolutionValid(testMoreRowStep)){
 			testMoreRowStep.rowStep++;
@@ -97,12 +97,12 @@ ns.Placeringar.prototype.uppdatera = function(){
 		}
 		if(i > 0){
 			steps = testMoreRowStep;
-			steps.debug("main MORE rowa");
+			//steps.debug("main MORE rowa");
 		}
-		math.debug(steps, "END");
+		//math.debug(steps, "END");
 
 		/* Placerar ut elever på framtagna platser */
-		Skrivsalen.debug("Placerar ut elever...", "Logik.Placeringar");
+		//Skrivsalen.debug("Placerar ut elever...", "Logik.Placeringar");
 
 		var studenter = new Skrivsalen.Logik.StudentManager(Skrivsalen.data.grupper);
 

@@ -44,6 +44,9 @@ Skrivsalen.Loader.loadApp = function(appPath){
 
 Skrivsalen.Loader.init = function(){
 	
+	//Trackpad Scroll Emulator jQuery plugin: https://github.com/jnicol/trackpad-scroll-emulator
+	$('.tse-scrollable').TrackpadScrollEmulator();
+
 	/** Definierar dessa console.log-funktioner i init, då de behöver Skrivsalen.Config */
 
 	Skrivsalen.log = function(msg, source){
@@ -92,6 +95,7 @@ Skrivsalen.Loader.init = function(){
 			Skrivsalen.data.import(file);
 		}
 	});
+
 
 	// kompabilitet
 	if (!FileReader){

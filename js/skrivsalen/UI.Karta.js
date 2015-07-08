@@ -44,4 +44,6 @@ ns.Karta.prototype.uppdatera = function(platsArr){
 		//var tr = document.createElement("tr");
 		this.mainDOM.appendChild(kartRow);
 	}
+
+	$('.tse-scrollable').TrackpadScrollEmulator('recalculate');
 }

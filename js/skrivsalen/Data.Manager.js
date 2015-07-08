@@ -2,7 +2,7 @@ var ns = Skrivsalen.createNamespace("Data");
 
 ns.Manager = function(editGrupperContainer){
 	this.grupper = [];
-	this.studenter = [];
+	this.studenter = []; // generas av grupperna
 
 	this.onchangeListeners = [];
 }
@@ -63,12 +63,39 @@ ns.Manager.prototype.removeGrupp = function(gruppId){
 	this._doOnChangeListeners();
 }
 
+ns.Manager.prototype.includeStudent = function(studentId, isIncluded){
+	Skrivsalen.debug("SSka sätta include på student "+studentId+" till "+isIncluded, "Data.Manager:includeStudent")
+	console.log(this.studenter);
+	for(var i = 0; i < this.studenter.length; i++){
+		if(this.studenter[i].id == studentId){
+			this.studenter[i].include = isIncluded;
+			Skrivsalen.debug("OK!", "Data.Manager:includeStudent");
+			this.studenter[i].grupp.uppdatera();
+			
+			break;
+		}
+	}
+	//this._generateStudentList();
+
+	this._doOnChangeListeners();
+}
+
 ns.Manager.prototype.getAntalGrupper = function(){
 	return this.grupper.length;
 }
 
 
 ns.Manager.prototype.getAntalStudenter = function(){
+	var antal = 0;
+	for(var i = 0; i < this.studenter.length; i++){
+		if(this.studenter[i].include){
+			antal++;
+		}
+	}
+	return antal;
+}
+
+ns.Manager.prototype.getAntalAllaStudenter = function(){
 	return this.studenter.length;
 }
 
@@ -78,9 +105,9 @@ ns.Manager.prototype._generateStudentList = function(){
 	this.studenter = [];
 	this.grupper.forEach(function(grupp){
 		grupp.studenter.forEach(function(student){
-			if(student.include){
+			//if(student.include){
 				this.studenter.push(student);
-			}
+			//}
 		}, this);
 	}, this); // skickar med dataObj som går att använda som this i forEach 
 }

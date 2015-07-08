@@ -18,7 +18,7 @@ ns.GruppList = function(container){
 }
 
 ns.GruppList.prototype.uppdatera = function(){
-	Skrivsalen.debug("Uppdaterar grupplista...", "UI.GruppList");
+	//Skrivsalen.debug("Uppdaterar grupplista...", "UI.GruppList");
 
 	Skrivsalen.UI.Factory.empty(this.listDOM);
 
@@ -27,7 +27,7 @@ ns.GruppList.prototype.uppdatera = function(){
 		this.listDOM.appendChild(grupp.getListitemDOM());
 	}
 
-	
+	$('.tse-scrollable').TrackpadScrollEmulator('recalculate');
 	
 }
 

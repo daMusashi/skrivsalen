@@ -11,7 +11,7 @@ ns.Student = function(fornamn, efternamn, klass, gruppObj, include){
 	this.namn = this.forNamn + " " + this.efterNamn;
 
 	if(this.grupp){
-		var grupp = this.grupp.namn;
+		var grupp = this.grupp.id;
 	} else {
 		var grupp = "";
 	}

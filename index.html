@@ -21,6 +21,9 @@
     <script src='js/spectrum/spectrumModded.js'></script>
     <link rel='stylesheet' href='js/spectrum/spectrum.css' />
 
+    <script src='js/tce-scrollbar/jquery.trackpad-scroll-emulator.min.js'></script>
+    <link rel='stylesheet' href='js/tce-scrollbar/trackpad-scroll-emulator.css' />
+
     <script src="js/skrivsalen/Skrivsalen.js"></script>
 
     <script>
@@ -37,23 +40,17 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <div id="sidebar">
-                <form>
-                    <h2>Lägg till elevgrupper</h2>
+        <div id="sidebar-wrapper" class="tse-scrollable">
+            <div id="sidebar" class="tse-content">
+                    <h2>Studentgrupper</h2>
                     <div class="form-group">
-                        <label for="select-elever">Ladda beskrivningsfiler</label>
+                        <label for="select-elever">Ladda importfiler</label>
                         <input type="file" class="form-control" id="skrivsalen-select-file" aria-describedby="select-elever-help">
                         <span id="select-elever-help" class="help-block">Välj en text-fil som exporterats från Skola24 med en undervisningsgrupp som ska delta. Flera kan anges, men bara en åt gången.</span>
                     </div>
                     <div class="form-group">
-                        <label>Tillagda elevgrupper</label>
+                        <label>Deltagande studentgrupper</label>
                         <div id="skrivsalen-edit-grupper"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="select-elever-long">Markera elever med förlängd tid</label>
-                        <button type="button" class="btn btn-primary" id="select-elever-long" aria-describedby="select-elever-long-help">Markera elever...</button>
-                        <span id="select-elever-long-help" class="help-block">Välj elever med förlängd tid. Dessa kommer inte ingå i placaringsprocessen</span>
                     </div>
                     <h2>Skrivsalen</h2>
                     <div class="form-group">
@@ -68,12 +65,11 @@
                         <input type="range" min="2" max="20" defualtValue="10" class="form-control" id="skrivsalen-select-cols" data-label="select-cols-value" aria-describedby="select-cols-help">
                         <span id="select-cols-help" class="help-block">Ange antalet platser per <strong>kolumn</strong> i skrivsalen</span>
                     </div>
-                </form>
             </div><!-- /#sidebar -->
         </div><!-- /#sidebar-wrapper -->
 
         <!-- Main Content -->
-        <div id="main-content-wrapper">
+        <div id="main-content-wrapper" >
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -81,10 +77,12 @@
                             <h1>Skrivsalen <small>&raquo applikation för skrivsalsplacering</small></h1>
                         </header>
 
-                        <div id="content">
-                        <div id="skrivsalen-karta-container"></div>
+                        <div id="content-wrapper" class="tse-scrollable">
+                            <div id="content" class="tse-content">
+                                <div id="skrivsalen-karta-container"></div>
+                                <a href="#" onclick="$('.tse-scrollable').TrackpadScrollEmulator('recalculate');">reCalc Scrollbars</a>
+                            </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
