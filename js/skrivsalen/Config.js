@@ -4,6 +4,8 @@ ns.Config = function(){}
 
 /** Applikationens path sparas direkt i Skrivsalen-objektet och sätts vid init i main HTML */
 
+ns.Config.version = 0.5;
+
 ns.Config.default_rows = 15;
 ns.Config.default_cols = 15;
 
@@ -16,6 +18,7 @@ ns.Config.gfx_file_gruppedit = ns.Config.gfx_path + "icon_list_24.png";
 ns.Config.gfx_file_gruppdelete = ns.Config.gfx_path + "icon_delete_24.png"; 
 
 // buttons, sliders etc. - NAMNGES I HTML
+ns.Config.domId_outputTabs = "skrivsalen-output-tabs"; // anges i HTML
 ns.Config.domId_importFileButton = "skrivsalen-select-file"; // anges i HTML
 ns.Config.domId_sliderRows = "skrivsalen-select-rows"; // anges i HTML
 ns.Config.domId_sliderCols = "skrivsalen-select-cols"; // anges i HTML
@@ -23,9 +26,12 @@ ns.Config.domId_sliderCols = "skrivsalen-select-cols"; // anges i HTML
 // Containers - NAMNGES I HTML
 ns.Config.domId_gruppListContainer = "skrivsalen-edit-grupper"; // anges i HTML
 ns.Config.domId_karta_container = "skrivsalen-karta-container"; // anges i HTML
+ns.Config.domId_placeringslista_container = "skrivsalen-lista-container"; // anges i HTML
+ns.Config.domId_version_container = "skrivsalen-version-container"; // anges i HTML
 
 // Containers - namn skapas av kod
 ns.Config.domId_karta = "skrivsalen-karta"; // genereras
+ns.Config.domId_placeringslista = "skrivsalen-placeringslista"; // genereras
 
 ns.Config.grupp_colors = [
 	"#00BFFF", 

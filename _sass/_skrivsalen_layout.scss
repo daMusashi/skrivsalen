@@ -1,10 +1,5 @@
 @import "skrivsalen_variables";
 
-/*!
- * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
 
 /* Toggle Styles */
 body {
@@ -56,7 +51,6 @@ body {
 
 #main-content-wrapper {
     width: 100%;
-    height: 100%;
     position: absolute;
     padding: $main-padding;
     margin-right: $sidebar-width;
@@ -65,11 +59,7 @@ body {
 
     #content-wrapper {
         width: 100%;
-        min-height: 800px;
 
-        .tse-scrollable {
-         
-        }
     }
 }
 
@@ -132,5 +122,6 @@ body {
         
         padding: $main-padding;
         position: relative;
+
     }
 }

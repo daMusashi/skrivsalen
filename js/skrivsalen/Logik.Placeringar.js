@@ -24,7 +24,7 @@ ns.Placeringar = function(rows, cols){
 	this.platser = [];
 	this._resetPlatser();
 
-	this.karta = new Skrivsalen.UI.Karta();
+	this.output = new Skrivsalen.Output.Ui();
 
 	this.uppdatera();
 
@@ -125,7 +125,7 @@ ns.Placeringar.prototype.uppdatera = function(){
 		Skrivsalen.log("inga studenter än :(", "Logik.Placeringar");
 	}
 
-	this.karta.uppdatera(this.platser);
+	this.output.uppdatera(this.platser);
 }
 
 ns.Placeringar.prototype.setRows = function(val){

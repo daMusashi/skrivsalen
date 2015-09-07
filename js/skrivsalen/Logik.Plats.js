@@ -12,7 +12,11 @@ ns.Plats = function(num, row, col, student){ // constructor
 }
 
 ns.Plats.prototype.getKartaDOM = function(width){
-	return this.UI.getDOM(width);
+	return this.UI.getKartDOM(width);
+}
+
+ns.Plats.prototype.getListaDOM = function(){
+	return this.UI.getListDOM();
 }
 
 

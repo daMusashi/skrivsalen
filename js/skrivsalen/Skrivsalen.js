@@ -31,7 +31,9 @@ Skrivsalen.Loader.loadApp = function(appPath){
 	scripts.push("UI.GruppList");
 	scripts.push("UI.Grupp");
 	scripts.push("UI.Plats");
-	scripts.push("UI.Karta");
+
+	scripts.push("Output.Ui");
+	//scripts.push("Output.Utskrift");
 
 	Skrivsalen.Loader.scriptsLoaded = 0;
 	Skrivsalen.Loader.scriptsNum = scripts.length;
@@ -44,8 +46,6 @@ Skrivsalen.Loader.loadApp = function(appPath){
 
 Skrivsalen.Loader.init = function(){
 	
-	//Trackpad Scroll Emulator jQuery plugin: https://github.com/jnicol/trackpad-scroll-emulator
-	$('.tse-scrollable').TrackpadScrollEmulator();
 
 	/** Definierar dessa console.log-funktioner i init, då de behöver Skrivsalen.Config */
 
@@ -81,7 +81,9 @@ Skrivsalen.Loader.init = function(){
 	var gruppUI = new Skrivsalen.UI.GruppList(document.getElementById(Skrivsalen.Config.domId_gruppListContainer), this);
 
 	/* Bootstrap tooltips */
-   	$('[data-toggle="tooltip"]').tooltip(); 
+   	//$('[data-toggle="tooltip"]').tooltip(); 
+   	
+   	$("#"+conf.domId_version_container).text("(v."+conf.version+")");
 
 	/* ladda-knapp */ 
 	$("#"+conf.domId_importFileButton).on("change", function(){
@@ -96,9 +98,18 @@ Skrivsalen.Loader.init = function(){
 		}
 	});
 
+	/* Ouptput tabs */
+	$("#"+conf.domId_outputTabs+" a").click(function (e) {
+  		e.preventDefault()
+  		$(this).tab('show')
+	})
+
+	//Trackpad Scroll Emulator jQuery plugin: https://github.com/jnicol/trackpad-scroll-emulator
+	//$('.nano').nanoScroller();
+
 
 	// kompabilitet
-	if (!FileReader){
+	if ((!FileReader)||(!Storage)){
 		var m = new Modal();
 		m.showWarning("Du har en för gammal webbläsare", "Den här applikationen behöver en modern webbläsare för att fungera. Uppdatera den här, eller prova en annan, om du har fler webbläsare installerade.");
 	}

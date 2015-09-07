@@ -6,7 +6,7 @@ ns.Plats = function(logikPlatsObj){ // constructor
 
 }
 
-ns.Plats.prototype.getDOM = function(widthProcent){
+ns.Plats.prototype.getKartDOM = function(widthProcent){
 	
 	var base = document.createElement("div");
 	$(base).attr("class", "plats-wrapper");
@@ -69,5 +69,47 @@ ns.Plats.prototype.getDOM = function(widthProcent){
 
 
 	return base;
+}
+
+ns.Plats.prototype.getListDOM = function(){
+	
+	var base;
+
+	//console.log(this.plats);
+
+	if(this.plats.student){
+		base = document.createElement("tr");
+
+		// placerings num
+		var numTd = document.createElement("td");
+		$(numTd).attr("class", "plats");
+		$(numTd).text(this.plats.num);
+
+		// namn
+		var namnTd = document.createElement("td");
+		$(namnTd).attr("class", "namn");
+		$(namnTd).text(this.plats.student.namn);
+
+		// grupp
+		var gruppTd = document.createElement("td");
+		$(gruppTd).attr("class", "grupp");
+		$(gruppTd).text(this.plats.student.grupp.namn);
+
+		// klass
+		var klassTd = document.createElement("td");
+		$(klassTd ).attr("class", "klass");
+		$(klassTd ).text(this.plats.student.klass);
+
+		base.appendChild(numTd);
+		base.appendChild(namnTd);
+		base.appendChild(gruppTd);
+		base.appendChild(klassTd);
+
+	} else {
+		base = null;
+	}
+
+	return base;
+
 }
 
